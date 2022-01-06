@@ -2,8 +2,14 @@ import React,{useState} from "react";
 
 function Card(props) {
     const [toggle,setToggle] = useState(false)
-    const [likes,setLikes] = useState(0);
-    
+    const [likes,setLikes] = useState(() => {
+        const locallikes=localStorage.getItem(props.image.url);
+        if(locallikes)
+        return locallikes
+        else
+        return 0
+    });
+
     function shorten(str, maxLen, separator = ' ') {
         if (str.length <= maxLen) return str;
         return str.substr(0, str.lastIndexOf(separator, maxLen));
@@ -11,6 +17,7 @@ function Card(props) {
 
     function handleLike() {
         setLikes(prevLikes => prevLikes+1)
+        localStorage.setItem(props.image.url,likes+1)
     }
 
     function handleClick() {

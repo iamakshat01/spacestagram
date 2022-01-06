@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react"
 import Card from "./Card"
 
-const apiUrl="https://api.nasa.gov/planetary/apod?api_key=FtmnlhvN8cW7a6TlGCOhBqTPkho7DivlXgVwlvRD&count=10"
+const apiUrl="https://api.nasa.gov/planetary/apod?api_key=FtmnlhvN8cW7a6TlGCOhBqTPkho7DivlXgVwlvRD&count=8"
 
 function Home() {
     const [images,setImages] = useState([])
