@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 
 function Card(props) {
-    
+
     // toggle for readmore
     const [toggle,setToggle] = useState(false)
     
@@ -38,8 +38,8 @@ function Card(props) {
     const short=shorten(image.explanation,95) // shortened description
 
     return (
-        <div className="h-full w-full md:w-2/3 lg:w-1/4 m-2 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-            <img className="h-60 w-full" src={image.url} alt={image.title}/>
+        <div className="h-full m-2 w-11/12 md:w-2/3 lg:w-1/4 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img className="h-60 w-full" src={image.url} alt={image.title} loading="lazy"/>
             <div className="p-6">
                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     {image.date}
