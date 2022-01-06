@@ -6,6 +6,7 @@ import {
 import { BrowserRouter } from 'react-router-dom';
 
 import Home from "./components/Home"
+import Loading from "./components/Loading";
 import Nav from "./components/Nav"
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
     <BrowserRouter>
       <Nav/>
       <Routes>
-        <Route path='/' element={<Home/>} />    
+        <Route path='/' element={<Home/>} />  
+        <Route path='/load' element={<Loading/>} />   
       </Routes>
     </BrowserRouter>
   )
