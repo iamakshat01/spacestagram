@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react"
+import Card from "./Card"
 
 const apiUrl="https://api.nasa.gov/planetary/apod?api_key=FtmnlhvN8cW7a6TlGCOhBqTPkho7DivlXgVwlvRD&count=10"
 
@@ -19,8 +20,8 @@ function Home() {
 
     const allimages = images.map((image,i)=>{
         return (
-            <div key={i}>
-                <h1>{image.title}</h1>
+            <div className="flex flex-col items-center" key={i}>
+                <Card image={image}/>
             </div>
         )
     })
