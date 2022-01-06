@@ -1,7 +1,9 @@
 import React,{useState} from "react";
 
 function Card(props) {
+    // toggle for readmore
     const [toggle,setToggle] = useState(false)
+    // store likes
     const [likes,setLikes] = useState(() => {
         const locallikes=localStorage.getItem(props.image.url);
         if(locallikes)
@@ -25,7 +27,7 @@ function Card(props) {
     }
 
     const image=props.image
-    const short=shorten(image.explanation,95)
+    const short=shorten(image.explanation,95) // shortened description
 
     return (
         <div className="h-full w-full md:w-2/3 lg:w-1/4 m-2 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">

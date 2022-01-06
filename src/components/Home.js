@@ -4,8 +4,10 @@ import Card from "./Card"
 const apiUrl="https://api.nasa.gov/planetary/apod?api_key=FtmnlhvN8cW7a6TlGCOhBqTPkho7DivlXgVwlvRD&count=8"
 
 function Home() {
+    // storing images here
     const [images,setImages] = useState([])
     
+    //fetching images
     useEffect(() => {
 
         const fetchData = async () => {
@@ -18,6 +20,7 @@ function Home() {
 
     },[]);
 
+    // creating list of images
     const allimages = images.map((image,i)=>{
         return (
             <div className="flex flex-col items-center" key={i}>
